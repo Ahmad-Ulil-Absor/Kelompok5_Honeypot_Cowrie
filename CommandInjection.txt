@@ -1,0 +1,94 @@
+2024-12-23T14:01:45.510893Z [-] Reading configuration from ['/home/adiet/cowrie/etc/cowrie.cfg.dist']
+2024-12-23T14:01:46.482520Z [-] Removing stale pidfile /home/adiet/cowrie/var/run/cowrie.pid
+2024-12-23T14:01:46.483012Z [-] Python Version 3.11.2 (main, Sep 14 2024, 03:00:30) [GCC 12.2.0]
+2024-12-23T14:01:46.483051Z [-] Twisted Version 24.10.0
+2024-12-23T14:01:46.483070Z [-] Cowrie Version 2.6.1
+2024-12-23T14:01:46.486877Z [-] Loaded output engine: jsonlog
+2024-12-23T14:01:46.489535Z [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 24.10.0 (/home/adiet/cowrie/cowrie-env/bin/python 3.11.2) starting up.
+2024-12-23T14:01:46.489763Z [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.epollreactor.EPollReactor.
+2024-12-23T14:01:46.513052Z [-] CowrieSSHFactory starting on 2222
+2024-12-23T14:01:46.516884Z [cowrie.ssh.factory.CowrieSSHFactory#info] Starting factory <cowrie.ssh.factory.CowrieSSHFactory object at 0x7ff7e3bd5890>
+2024-12-23T14:01:46.672585Z [-] Ready to accept SSH connections
+2024-12-23T14:21:27.112986Z [cowrie.ssh.factory.CowrieSSHFactory] New connection: 192.168.33.227:62576 (192.168.33.31:2222) [session: 2519e4886759]
+2024-12-23T14:21:27.125402Z [HoneyPotSSHTransport,0,192.168.33.227] Remote SSH version: SSH-2.0-PuTTY_Release_0.82
+2024-12-23T14:21:27.173420Z [HoneyPotSSHTransport,0,192.168.33.227] SSH client hassh fingerprint: f17a3d94ddc11da7caa29e58de92b0d4
+2024-12-23T14:21:27.181525Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] kex alg=b'curve25519-sha256' key alg=b'ssh-ed25519'
+2024-12-23T14:21:27.181809Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] outgoing: b'aes256-ctr' b'hmac-sha2-256' b'none'
+2024-12-23T14:21:27.181952Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] incoming: b'aes256-ctr' b'hmac-sha2-256' b'none'
+2024-12-23T14:21:29.898118Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] NEW KEYS
+2024-12-23T14:21:29.898860Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] starting service b'ssh-userauth'
+2024-12-23T14:21:34.463059Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'root' trying auth b'none'
+2024-12-23T14:21:36.048236Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'root' trying auth b'password'
+2024-12-23T14:21:36.051394Z [HoneyPotSSHTransport,0,192.168.33.227] Could not read etc/userdb.txt, default database activated
+2024-12-23T14:21:36.055447Z [HoneyPotSSHTransport,0,192.168.33.227] login attempt [b'root'/b'12345'] succeeded
+2024-12-23T14:21:36.057410Z [HoneyPotSSHTransport,0,192.168.33.227] Initialized emulated server as architecture: linux-x64-lsb
+2024-12-23T14:21:36.090169Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'root' authenticated with b'password'
+2024-12-23T14:21:36.090681Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] starting service b'ssh-connection'
+2024-12-23T14:21:36.092432Z [cowrie.ssh.connection.CowrieSSHConnection#debug] got channel b'session' request
+2024-12-23T14:21:36.092828Z [cowrie.ssh.session.HoneyPotSSHSession#info] channel open
+2024-12-23T14:21:36.156269Z [twisted.conch.ssh.session#info] Handling pty request: b'xterm' (24, 80, 0, 0)
+2024-12-23T14:21:36.156594Z [SSHChannel session (0) on SSHService b'ssh-connection' on HoneyPotSSHTransport,0,192.168.33.227] Terminal Size: 80 24
+2024-12-23T14:21:36.158620Z [twisted.conch.ssh.session#info] Getting shell
+2024-12-23T14:22:04.265270Z [HoneyPotSSHTransport,0,192.168.33.227] CMD: useradd attacker -p $(openssl passwd -1 password)
+2024-12-23T14:22:04.274109Z [HoneyPotSSHTransport,0,192.168.33.227] CMD: openssl passwd -1 password
+2024-12-23T14:22:04.281769Z [HoneyPotSSHTransport,0,192.168.33.227] Can't find command openssl
+2024-12-23T14:22:04.282806Z [HoneyPotSSHTransport,0,192.168.33.227] Command not found: openssl passwd -1 password
+2024-12-23T14:22:04.286273Z [HoneyPotSSHTransport,0,192.168.33.227] Command found: useradd attacker -p 
+2024-12-23T14:24:05.904332Z [HoneyPotSSHTransport,0,192.168.33.227] CMD: ; $(ls -la /)
+2024-12-23T14:24:05.905302Z [HoneyPotSSHTransport,0,192.168.33.227] CMD: ls -la /
+2024-12-23T14:24:05.906061Z [HoneyPotSSHTransport,0,192.168.33.227] Command found: ls -la /
+2024-12-23T14:24:05.920349Z [HoneyPotSSHTransport,0,192.168.33.227] Can't find command drwxr-xr-x 1 root root  4096 2013-04-05 19:03 .
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:03 ..
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:53 bin
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:02 boot
+	drwxr-xr-x 1 root root  3060 2013-04-05 19:03 dev
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:06 etc
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:02 home
+	lrwxrwxrwx 1 root root    32 2013-04-05 18:53 initrd.img -> /boot/initrd.img-3.2.0-4-686-pae
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:01 lib
+	drwx------ 1 root root 16384 2013-04-05 18:52 lost+found
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 media
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 mnt
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 opt
+	dr-xr-xr-x 1 root root     0 2013-04-05 19:03 proc
+	drwx------ 1 root root  4096 2013-04-05 19:25 root
+	drwxr-xr-x 1 root root   380 2013-04-05 19:06 run
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:03 sbin
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 selinux
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 srv
+	drwxr-xr-x 1 root root     0 2013-04-05 19:03 sys
+	-rwxr-xr-x 1 root root   500 2021-05-30 11:44 test2
+	drwxrwxrwt 1 root root  4096 2013-04-05 19:17 tmp
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 usr
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 var
+	lrwxrwxrwx 1 root root    28 2013-04-05 18:53 vmlinuz -> /boot/vmlinuz-3.2.0-4-686-pae
+2024-12-23T14:24:05.925996Z [HoneyPotSSHTransport,0,192.168.33.227] Command not found: drwxr-xr-x 1 root root  4096 2013-04-05 19:03 .
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:03 ..
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:53 bin
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:02 boot
+	drwxr-xr-x 1 root root  3060 2013-04-05 19:03 dev
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:06 etc
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:02 home
+	lrwxrwxrwx 1 root root    32 2013-04-05 18:53 initrd.img -> /boot/initrd.img-3.2.0-4-686-pae
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:01 lib
+	drwx------ 1 root root 16384 2013-04-05 18:52 lost+found
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 media
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 mnt
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 opt
+	dr-xr-xr-x 1 root root     0 2013-04-05 19:03 proc
+	drwx------ 1 root root  4096 2013-04-05 19:25 root
+	drwxr-xr-x 1 root root   380 2013-04-05 19:06 run
+	drwxr-xr-x 1 root root  4096 2013-04-05 19:03 sbin
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 selinux
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 srv
+	drwxr-xr-x 1 root root     0 2013-04-05 19:03 sys
+	-rwxr-xr-x 1 root root   500 2021-05-30 11:44 test2
+	drwxrwxrwt 1 root root  4096 2013-04-05 19:17 tmp
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 usr
+	drwxr-xr-x 1 root root  4096 2013-04-05 18:52 var
+	lrwxrwxrwx 1 root root    28 2013-04-05 18:53 vmlinuz -> /boot/vmlinuz-3.2.0-4-686-pae
+2024-12-23T14:24:36.121468Z [-] Timeout reached in HoneyPotSSHTransport
+2024-12-23T14:24:36.124042Z [HoneyPotSSHTransport,0,192.168.33.227] Closing TTY Log: var/lib/cowrie/tty/0c2f0637a553f26776092862fd5975f364daf5fe759a02629a6d8ccbff814f6c after 180.0 seconds
+2024-12-23T14:24:36.125029Z [HoneyPotSSHTransport,0,192.168.33.227] avatar root logging out
+2024-12-23T14:24:36.125334Z [cowrie.ssh.transport.HoneyPotSSHTransport#info] connection lost
+2024-12-23T14:24:36.125458Z [HoneyPotSSHTransport,0,192.168.33.227] Connection lost after 189.0 seconds

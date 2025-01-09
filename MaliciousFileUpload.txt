@@ -1,0 +1,48 @@
+2024-12-26T14:06:55.305529Z [-] Reading configuration from ['/home/adiet/cowrie/etc/cowrie.cfg.dist']
+2024-12-26T14:06:55.922135Z [-] Removing stale pidfile /home/adiet/cowrie/var/run/cowrie.pid
+2024-12-26T14:06:55.922805Z [-] Python Version 3.11.2 (main, Sep 14 2024, 03:00:30) [GCC 12.2.0]
+2024-12-26T14:06:55.922848Z [-] Twisted Version 24.10.0
+2024-12-26T14:06:55.922867Z [-] Cowrie Version 2.6.1
+2024-12-26T14:06:55.927725Z [-] Loaded output engine: jsonlog
+2024-12-26T14:06:55.930012Z [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 24.10.0 (/home/adiet/cowrie/cowrie-env/bin/python 3.11.2) starting up.
+2024-12-26T14:06:55.930202Z [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.epollreactor.EPollReactor.
+2024-12-26T14:06:55.941439Z [-] CowrieSSHFactory starting on 2222
+2024-12-26T14:06:55.942812Z [cowrie.ssh.factory.CowrieSSHFactory#info] Starting factory <cowrie.ssh.factory.CowrieSSHFactory object at 0x7fb55b8d5350>
+2024-12-26T14:06:56.096957Z [-] Ready to accept SSH connections
+2024-12-26T14:07:33.598208Z [cowrie.ssh.factory.CowrieSSHFactory] New connection: 192.168.33.172:58676 (192.168.33.31:2222) [session: d46f37b10d6f]
+2024-12-26T14:07:33.606983Z [HoneyPotSSHTransport,0,192.168.33.172] Remote SSH version: SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3
+2024-12-26T14:07:33.617057Z [HoneyPotSSHTransport,0,192.168.33.172] SSH client hassh fingerprint: aae6b9604f6f3356543709a376d7f657
+2024-12-26T14:07:33.623873Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] kex alg=b'curve25519-sha256' key alg=b'ssh-ed25519'
+2024-12-26T14:07:33.624197Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] outgoing: b'aes128-ctr' b'hmac-sha2-256' b'none'
+2024-12-26T14:07:33.624327Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] incoming: b'aes128-ctr' b'hmac-sha2-256' b'none'
+2024-12-26T14:07:33.635587Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] NEW KEYS
+2024-12-26T14:07:33.639461Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] starting service b'ssh-userauth'
+2024-12-26T14:07:33.642140Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'root' trying auth b'none'
+2024-12-26T14:07:36.327139Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'root' trying auth b'password'
+2024-12-26T14:07:36.331707Z [HoneyPotSSHTransport,0,192.168.33.172] Could not read etc/userdb.txt, default database activated
+2024-12-26T14:07:36.333938Z [HoneyPotSSHTransport,0,192.168.33.172] login attempt [b'root'/b'12345'] succeeded
+2024-12-26T14:07:36.335021Z [HoneyPotSSHTransport,0,192.168.33.172] Initialized emulated server as architecture: linux-x64-lsb
+2024-12-26T14:07:36.358020Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'root' authenticated with b'password'
+2024-12-26T14:07:36.358864Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] starting service b'ssh-connection'
+2024-12-26T14:07:36.360620Z [cowrie.ssh.connection.CowrieSSHConnection#debug] got channel b'session' request
+2024-12-26T14:07:36.361463Z [cowrie.ssh.session.HoneyPotSSHSession#info] channel open
+2024-12-26T14:07:36.361758Z [cowrie.ssh.connection.CowrieSSHConnection#debug] got global b'no-more-sessions@openssh.com' request
+2024-12-26T14:07:36.364900Z [SSHChannel session (0) on SSHService b'ssh-connection' on HoneyPotSSHTransport,0,192.168.33.172] request_env: LANG=en_US.UTF-8
+2024-12-26T14:07:36.366758Z [twisted.conch.ssh.session#info] Asking for subsystem "b'sftp'"
+2024-12-26T14:07:36.367595Z [cowrie.shell.avatar.CowrieUser#debug] Subsystem lookup: {b'sftp': <class 'twisted.conch.ssh.filetransfer.FileTransferServer'>}
+2024-12-26T14:07:36.464270Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] dispatching: INIT requestId=3
+2024-12-26T14:07:36.465976Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] dispatching: STAT requestId=1
+2024-12-26T14:07:36.466306Z [HoneyPotSSHTransport,0,192.168.33.172] SFTP getAttrs: b'/tmp/'
+2024-12-26T14:07:36.467726Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] dispatching: OPEN requestId=2
+2024-12-26T14:07:36.468004Z [HoneyPotSSHTransport,0,192.168.33.172] SFTP openFile: b'/tmp/shell.php'
+2024-12-26T14:07:36.472180Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] dispatching: WRITE requestId=4
+2024-12-26T14:07:36.473786Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] dispatching: FSETSTAT requestId=3
+2024-12-26T14:07:36.475574Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] dispatching: CLOSE requestId=4
+2024-12-26T14:07:36.475797Z [twisted.conch.ssh.filetransfer.FileTransferServer#info] closing: b'\x00\x00\x00\x04' b'8776055552189'
+2024-12-26T14:07:36.476230Z [HoneyPotSSHTransport,0,192.168.33.172] SFTP Uploaded file "shell.php" to var/lib/cowrie/downloads/ac5b099b97c6536012276c5e61c50d4f4fe6fd606bd861c5c15f769153452e68
+2024-12-26T14:07:36.478477Z [cowrie.ssh.connection.CowrieSSHConnection#info] sending close 0
+2024-12-26T14:07:36.480105Z [cowrie.ssh.session.HoneyPotSSHSession#info] remote close
+2024-12-26T14:07:36.480640Z [HoneyPotSSHTransport,0,192.168.33.172] Got remote error, code 11 reason: b'disconnected by user'
+2024-12-26T14:07:36.481593Z [HoneyPotSSHTransport,0,192.168.33.172] avatar root logging out
+2024-12-26T14:07:36.481868Z [cowrie.ssh.transport.HoneyPotSSHTransport#info] connection lost
+2024-12-26T14:07:36.482438Z [HoneyPotSSHTransport,0,192.168.33.172] Connection lost after 2.9 seconds
